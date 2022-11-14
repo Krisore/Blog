@@ -23,9 +23,9 @@
 @code {
     private List<BlogPost> BlogPosts { get; set; } = new List<BlogPost>();
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        BlogPosts = BlogService.GetBlogPosts();
+        BlogPosts = await BlogService.GetBlogPosts();
     }
 
 }
